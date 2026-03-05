@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cobex Tech Support - Layanan Pembuatan Website</title>
+    <meta
+      name="description"
+      content="Cobex Tech Support menyediakan layanan pembuatan website profesional: Company Profile, Sistem Booking, Kasir/POS, dan Custom Sistem."
+    />
+    <meta
+      name="keywords"
+      content="servis komputer, jasa IT, recovery data, instalasi OS, pembuatan website, troubleshooting, IT support"
+    />
+
+    <!-- Favicons -->
+    <link href="assets/img/logo.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      /* ===== PRICING SECTION STYLES ===== */
+      .pricing-section {
+        padding: 0px 0 20px;
+      }
+
+      .pricing-section .section-title {
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      .pricing-section .section-title h2 {
+        font-family: "Syne", sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #1a1a2e;
+        margin-bottom: 8px;
+      }
+
+      .pricing-section .section-title p {
+        color: #666;
+        font-size: 0.95rem;
+      }
+
+      /* ===== PACKAGE CARDS ===== */
+      .pkg-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 24px;
+        margin-top: -25px;
+      }
+
+      @media (max-width: 768px) {
+        .pkg-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .pkg-card {
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        background: #fff;
+        border: 2px solid transparent;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .pkg-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Header colors per package */
+      .pkg-card.blue .pkg-header {
+        background: #1565c0;
+      }
+      .pkg-card.purple .pkg-header {
+        background: #6a1fc2;
+      }
+      .pkg-card.green .pkg-header {
+        background: #1a7a45;
+      }
+      .pkg-card.orange .pkg-header {
+        background: #e07b00;
+      }
+
+      .pkg-card.blue {
+        border-color: #1565c0;
+      }
+      .pkg-card.purple {
+        border-color: #6a1fc2;
+      }
+      .pkg-card.green {
+        border-color: #1a7a45;
+      }
+      .pkg-card.orange {
+        border-color: #e07b00;
+      }
+
+      .pkg-header {
+        padding: 18px 24px 16px;
+        text-align: center;
+        color: #fff;
+      }
+
+      .pkg-header .pkg-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.85;
+        margin-bottom: 4px;
+      }
+
+      .pkg-header h3 {
+        font-family: "Syne", sans-serif;
+        font-size: 1.45rem;
+        font-weight: 800;
+        color: #fff;
+        margin: 0;
+        letter-spacing: 0.01em;
+      }
+
+      .pkg-body {
+        padding: 24px 24px 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Price */
+      .pkg-price {
+        margin-bottom: 4px;
+      }
+
+      .pkg-price .main-price {
+        font-family: "Syne", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 800;
+        line-height: 1.1;
+      }
+
+      .pkg-card.blue .pkg-price .main-price {
+        color: #1565c0;
+      }
+      .pkg-card.purple .pkg-price .main-price {
+        color: #6a1fc2;
+      }
+      .pkg-card.green .pkg-price .main-price {
+        color: #1a7a45;
+      }
+      .pkg-card.orange .pkg-price .main-price {
+        color: #e07b00;
+      }
+
+      .pkg-price .max-price {
+        font-size: 0.82rem;
+        color: #888;
+        margin-top: 2px;
+      }
+
+      /* Divider */
+      .pkg-divider {
+        border: none;
+        border-top: 1px solid #eee;
+        margin: 14px 0;
+      }
+
+      /* Feature list */
+      .pkg-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 16px;
+        flex: 1;
+      }
+
+      .pkg-features li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 0.875rem;
+        color: #333;
+        padding: 4px 0;
+        line-height: 1.4;
+      }
+
+      .pkg-features li i {
+        margin-top: 2px;
+        font-size: 0.85rem;
+        flex-shrink: 0;
+      }
+
+      .pkg-card.blue .pkg-features li i {
+        color: #1565c0;
+      }
+      .pkg-card.purple .pkg-features li i {
+        color: #6a1fc2;
+      }
+      .pkg-card.green .pkg-features li i {
+        color: #1a7a45;
+      }
+      .pkg-card.orange .pkg-features li i {
+        color: #e07b00;
+      }
+
+      /* Suitable for */
+      .pkg-suitable {
+        font-size: 0.78rem;
+        color: #777;
+        font-style: italic;
+        margin-top: auto;
+        padding-top: 10px;
+        border-top: 1px dashed #e0e0e0;
+      }
+
+      .pkg-suitable strong {
+        font-style: normal;
+        color: #555;
+      }
+
+      /* CTA button */
+      .pkg-cta {
+        display: block;
+        text-align: center;
+        margin-top: 14px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.875rem;
+        text-decoration: none;
+        transition: opacity 0.2s;
+        color: #fff !important;
+      }
+
+      .pkg-cta:hover {
+        opacity: 0.85;
+      }
+
+      .pkg-card.blue .pkg-cta {
+        background: #1565c0;
+      }
+      .pkg-card.purple .pkg-cta {
+        background: #6a1fc2;
+      }
+      .pkg-card.green .pkg-cta {
+        background: #1a7a45;
+      }
+      .pkg-card.orange .pkg-cta {
+        background: #e07b00;
+      }
+
+      /* ===== MAINTENANCE BANNER ===== */
+      .maintenance-banner {
+        background: #fff8e1;
+        border: 1.5px solid #ffd54f;
+        border-radius: 12px;
+        padding: 18px 28px;
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      .maintenance-banner p {
+        margin: 0;
+        font-size: 0.92rem;
+        color: #5d4037;
+      }
+
+      .maintenance-banner .highlight {
+        font-weight: 700;
+        font-size: 1rem;
+        color: #e65100;
+      }
+
+      .maintenance-banner .sub {
+        font-size: 0.8rem;
+        color: #8d6e63;
+        margin-top: 4px;
+        display: block;
+      }
+
+      /* ===== OVERRIDE service-details content ===== */
+      #service-details .content-intro h3 {
+        font-family: "Syne", sans-serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #1a1a2e;
+        margin-bottom: 12px;
+      }
+    </style>
+  </head>
+
+  <body class="blog-details-page">
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center"
+      >
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <img src="assets/img/logo.png" alt="Cobex Tech Support" />
+          <h2 class="sitename m-auto">Cobex Tech Support</h2>
+        </a>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Beranda</a></li>
+            <li><a href="index.html#about">Tentang Kami</a></li>
+            <li><a href="index.html#services" class="active">Layanan</a></li>
+            <li><a href="index.html#portfolio">Proyek Kami</a></li>
+            <li><a href="blog.html">Artikel</a></li>
+            <li><a href="index.html#contact">Kontak</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Page Title -->
+      <div class="page-title">
+        <div class="heading">
+          <div class="container">
+            <div class="row d-flex justify-content-center text-center">
+              <div class="col-lg-8">
+                <h1>Layanan Pembuatan Website</h1>
+                <p class="mb-0">
+                  Kami menyediakan jasa pembuatan website profesional yang
+                  disesuaikan dengan kebutuhan bisnis Anda — dari company
+                  profile hingga sistem custom yang kompleks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="breadcrumbs">
+          <div class="container">
+            <ol>
+              <li><a href="index.html">Beranda</a></li>
+              <li class="current">Detail Layanan Pembuatan Website</li>
+            </ol>
+          </div>
+        </nav>
+      </div>
+      <!-- End Page Title -->
+
+      <!-- Service Details Section -->
+      <section id="service-details" class="service-details section">
+        <div class="container">
+          <div class="row gy-5">
+            <!-- Sidebar -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-box">
+                <h4>Website Profesional untuk Bisnis Anda</h4>
+                <div class="services-list">
+                  <div class="content-intro">
+                    <p class="text-justify">
+                      Cobex Tech Support hadir dengan solusi pembuatan website
+                      yang terjangkau, modern, dan fungsional. Kami memahami
+                      bahwa setiap bisnis memiliki kebutuhan yang berbeda —
+                      itulah mengapa kami menyediakan berbagai paket yang dapat
+                      disesuaikan.
+                    </p>
+                    <ul>
+                      <li>
+                        <i class="bi bi-check-circle"></i
+                        ><span>Desain responsif dan mobile-friendly.</span>
+                      </li>
+                      <li>
+                        <i class="bi bi-check-circle"></i
+                        ><span
+                          >Hosting dan domain sudah termasuk (paket
+                          tertentu).</span
+                        >
+                      </li>
+                      <li>
+                        <i class="bi bi-check-circle"></i
+                        ><span>Dukungan teknis dan maintenance tersedia.</span>
+                      </li>
+                    </ul>
+                    <p>
+                      Pilih paket yang paling sesuai dengan kebutuhan dan
+                      anggaran bisnis Anda.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="service-box">
+                <h4>Download Catalog</h4>
+                <div class="download-catalog">
+                  <a href="#"
+                    ><i class="bi bi-filetype-pdf"></i
+                    ><span>Catalog PDF</span></a
+                  >
+                  <a href="#"
+                    ><i class="bi bi-file-earmark-word"></i
+                    ><span>Catalog DOC</span></a
+                  >
+                </div>
+              </div>
+
+              <div
+                class="help-box d-flex flex-column justify-content-center align-items-center"
+              >
+                <i class="bi bi-headset help-icon"></i>
+                <h4>Ada Pertanyaan?</h4>
+                <p class="d-flex align-items-center mt-2 mb-0">
+                  <i class="bi bi-telephone me-2"></i>
+                  <span>+62 877-8906-6519</span>
+                </p>
+                <p class="d-flex align-items-center mt-1 mb-0">
+                  <i class="bi bi-envelope me-2"></i>
+                  <a href="mailto:cobextechs@gmail.com">cobextechs@gmail.com</a>
+                </p>
+              </div>
+            </div>
+
+            <!-- Main Content -->
+            <div
+              class="col-lg-8 ps-lg-5"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <!-- <img
+                src="assets/img/services.jpg"
+                alt="Layanan Pembuatan Website"
+                class="img-fluid services-img"
+              /> -->
+
+              <!-- Pricing Packages -->
+              <div class="pricing-section">
+                <div class="section-title">
+                  <h2>Paket Layanan Kami</h2>
+                  <p>Harga transparan, fitur lengkap, hasil maksimal</p>
+                </div>
+
+                <div class="pkg-grid">
+                  <!-- PAKET 1: Company Profile -->
+                  <div class="pkg-card blue">
+                    <div class="pkg-header">
+                      <div class="pkg-label">Paket 1</div>
+                      <h3>Company Profile</h3>
+                    </div>
+                    <div class="pkg-body">
+                      <div class="pkg-price">
+                        <div class="main-price">Rp 750.000</div>
+                        <div class="max-price">s.d. Rp 1.500.000</div>
+                      </div>
+                      <hr class="pkg-divider" />
+                      <ul class="pkg-features">
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Halaman beranda
+                          usaha
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Katalog
+                          produk/layanan
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Tombol order
+                          via WhatsApp
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Embed Google
+                          Maps
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Hosting +
+                          Domain 1 tahun
+                        </li>
+                      </ul>
+                      <p class="pkg-suitable">
+                        <strong>Cocok untuk:</strong> Toko, Bengkel, Salon,
+                        Konveksi, Kuliner
+                      </p>
+                      <a
+                        href="https://wa.me/6287789066519?text=Halo%20Cobex%2C%20saya%20ingin%20tanya%20Paket%201%20Company%20Profile"
+                        class="pkg-cta"
+                        target="_blank"
+                      >
+                        <i class="bi bi-whatsapp me-1"></i> Pesan Sekarang
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- PAKET 2: Sistem Booking -->
+                  <div class="pkg-card purple">
+                    <div class="pkg-header">
+                      <div class="pkg-label">Paket 2</div>
+                      <h3>Sistem Booking</h3>
+                    </div>
+                    <div class="pkg-body">
+                      <div class="pkg-price">
+                        <div class="main-price">Rp 1.500.000</div>
+                        <div class="max-price">s.d. Rp 2.500.000</div>
+                      </div>
+                      <hr class="pkg-divider" />
+                      <ul class="pkg-features">
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Semua fitur
+                          Paket 1
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Form booking
+                          online
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Dashboard admin
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Notifikasi
+                          WhatsApp
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Cek status +
+                          bukti bayar
+                        </li>
+                      </ul>
+                      <p class="pkg-suitable">
+                        <strong>Cocok untuk:</strong> Laundry, Katering,
+                        Bengkel, Salon, Rental
+                      </p>
+                      <a
+                        href="https://wa.me/6287789066519?text=Halo%20Cobex%2C%20saya%20ingin%20tanya%20Paket%202%20Sistem%20Booking"
+                        class="pkg-cta"
+                        target="_blank"
+                      >
+                        <i class="bi bi-whatsapp me-1"></i> Pesan Sekarang
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- PAKET 3: Kasir / POS -->
+                  <div class="pkg-card green">
+                    <div class="pkg-header">
+                      <div class="pkg-label">Paket 3</div>
+                      <h3>Kasir / POS</h3>
+                    </div>
+                    <div class="pkg-body">
+                      <div class="pkg-price">
+                        <div class="main-price">Rp 2.000.000</div>
+                        <div class="max-price">s.d. Rp 3.500.000</div>
+                      </div>
+                      <hr class="pkg-divider" />
+                      <ul class="pkg-features">
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Input transaksi
+                          penjualan
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Manajemen stok
+                          barang
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Laporan harian
+                          &amp; bulanan
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Multi user
+                          kasir + pemilik
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Hosting +
+                          Domain 1 tahun
+                        </li>
+                      </ul>
+                      <p class="pkg-suitable">
+                        <strong>Cocok untuk:</strong> Toko Kelontong,
+                        Minimarket, Warung Makan
+                      </p>
+                      <a
+                        href="https://wa.me/6287789066519?text=Halo%20Cobex%2C%20saya%20ingin%20tanya%20Paket%203%20Kasir%20POS"
+                        class="pkg-cta"
+                        target="_blank"
+                      >
+                        <i class="bi bi-whatsapp me-1"></i> Pesan Sekarang
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- PAKET 4: Custom Sistem -->
+                  <div class="pkg-card orange">
+                    <div class="pkg-header">
+                      <div class="pkg-label">Paket 4</div>
+                      <h3>Custom Sistem</h3>
+                    </div>
+                    <div class="pkg-body">
+                      <div class="pkg-price">
+                        <div class="main-price">Rp 500.000</div>
+                        <div class="max-price">s.d. Rp 5.000.000+</div>
+                      </div>
+                      <hr class="pkg-divider" />
+                      <ul class="pkg-features">
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Sistem SPK /
+                          Pengambilan Keputusan
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Sistem
+                          Informasi Manajemen
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Web GIS /
+                          Pemetaan
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Sistem Absensi
+                          &amp; Penggajian
+                        </li>
+                        <li>
+                          <i class="bi bi-check-circle-fill"></i>Sesuai
+                          kebutuhan Anda
+                        </li>
+                      </ul>
+                      <p class="pkg-suitable">
+                        <strong>Cocok untuk:</strong> Mahasiswa Skripsi,
+                        Instansi, UMKM Kebutuhan Khusus
+                      </p>
+                      <a
+                        href="https://wa.me/6287789066519?text=Halo%20Cobex%2C%20saya%20ingin%20konsultasi%20Paket%204%20Custom%20Sistem"
+                        class="pkg-cta"
+                        target="_blank"
+                      >
+                        <i class="bi bi-whatsapp me-1"></i> Konsultasi Gratis
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <!-- End pkg-grid -->
+
+                <!-- Maintenance Banner -->
+                <div class="maintenance-banner">
+                  <p>
+                    <span class="highlight"
+                      >★ Layanan Maintenance Tahunan tersedia mulai Rp
+                      300.000/tahun ★</span
+                    >
+                  </p>
+                  <span class="sub"
+                    >Update konten &nbsp;•&nbsp; Backup data &nbsp;•&nbsp;
+                    Perbaikan bug &nbsp;•&nbsp; Perpanjang hosting</span
+                  >
+                </div>
+              </div>
+              <!-- End Pricing Packages -->
+            </div>
+            <!-- End Main Content -->
+          </div>
+        </div>
+      </section>
+      <!-- /Service Details Section -->
+    </main>
+
+    <footer id="footer" class="footer border-top">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="d-flex align-items-center">
+              <span class="sitename">Cobex Tech Support</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Jl. Irigasi Blok Cobek RT/RW 001/004</p>
+              <p>DS. Mulyasari, Kec. Losari, Kab. Cirebon</p>
+              <p class="mt-3">
+                <strong>Telepon:</strong> <span>+62 877-8906-6519</span>
+              </p>
+              <p><strong>Email:</strong> <span>cobextechs@gmail.com</span></p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Tautan Cepat</h4>
+            <ul>
+              <li>
+                <i class="bi bi-chevron-right"></i> <a href="#hero">Beranda</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#about">Tentang Kami</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#services">Layanan</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#contact">Kontak</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Layanan Kami</h4>
+            <ul>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#services">Servis Komputer</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#services">Recovery Data</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#services">Instalasi OS</a>
+              </li>
+              <li>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#services">Pembuatan Website</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12">
+            <h4>Media Sosial</h4>
+            <p>
+              Ikuti kami di media sosial untuk informasi terbaru seputar layanan
+              dan tips teknologi.
+            </p>
+            <div class="social-links d-flex">
+              <a href="https://www.instagram.com/cobextechsupport/"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="https://www.facebook.com/cobextechsupport/"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="https://www.youtube.com/@codensupport"
+                ><i class="bi bi-youtube"></i
+              ></a>
+              <a href="https://share.google/XWfiSm7JThqFtYJ6Z"
+                ><i class="bi bi-google"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename m-auto">Cobex Tech Support</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
