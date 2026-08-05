@@ -1,0 +1,235 @@
+/**
+ * CobexTech — Custom Style Overrides
+ * Ditulis mobile-first: style dasar untuk layar kecil dulu,
+ * lalu diperluas ke tablet/desktop lewat min-width media queries.
+ * File ini terpisah dari main.css (bawaan template FlexStart)
+ * supaya update template di kemudian hari tidak menimpa kustomisasi ini.
+ */
+
+/* -----------------------------------------------------------
+   1. Elegant, simple base refinements
+----------------------------------------------------------- */
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.section-title p {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Softer, more modern buttons */
+.hero .btn-get-started,
+button[type="submit"] {
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.portfolio-content,
+.service-item,
+.info-item {
+  border-radius: 14px;
+}
+
+/* -----------------------------------------------------------
+   2. Projects & Downloads section
+----------------------------------------------------------- */
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.project-filters li {
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--heading-color);
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--heading-color) 12%, transparent);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-filters li:hover,
+.project-filters li.filter-active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.project-item {
+  display: block;
+}
+
+.project-item.project-hidden {
+  display: none;
+}
+
+.project-card {
+  background: var(--surface-color);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+.project-thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-live {
+  background: #16a34a;
+}
+
+.badge-personal {
+  background: var(--accent-color);
+}
+
+.project-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-body h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--heading-color);
+}
+
+.project-body p {
+  font-size: 14px;
+  color: var(--default-color);
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-project-primary {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.btn-project-primary:hover {
+  background: color-mix(in srgb, var(--accent-color) 85%, black);
+  color: #fff;
+}
+
+.btn-project-outline {
+  background: transparent;
+  border: 1.5px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.btn-project-outline:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+.btn-project-ghost {
+  background: color-mix(in srgb, var(--heading-color) 6%, transparent);
+  color: var(--heading-color);
+}
+
+.btn-project-ghost:hover {
+  background: var(--heading-color);
+  color: #fff;
+}
+
+.project-note {
+  margin-top: 28px;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--default-color) 70%, transparent);
+}
+
+/* -----------------------------------------------------------
+   3. Footer visitor counter
+----------------------------------------------------------- */
+.visitor-counter {
+  font-size: 13px;
+  opacity: 0.85;
+  margin: 8px 0;
+}
+
+.visitor-counter #visitor-count {
+  font-weight: 700;
+}
+
+/* -----------------------------------------------------------
+   4. Tablet and up
+----------------------------------------------------------- */
+@media (min-width: 768px) {
+  .project-filters li {
+    padding: 9px 22px;
+    font-size: 15px;
+  }
+
+  .project-body h4 {
+    font-size: 19px;
+  }
+}
+
+/* -----------------------------------------------------------
+   5. Desktop and up
+----------------------------------------------------------- */
+@media (min-width: 1200px) {
+  .project-card:hover {
+    transform: translateY(-6px);
+  }
+}
