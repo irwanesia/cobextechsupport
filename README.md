@@ -6,7 +6,7 @@ Jawa Barat.
 
 Repo ini merupakan hasil revisi besar dari template awal, dengan tujuan
 mengubah website dari sekadar landing page menjadi website portfolio +
-blog yang lebih modern, elegan, dan siap dikembangkan lebih lanjut
+AI Generator blog yang lebih modern, elegan, dan siap dikembangkan lebih lanjut
 (termasuk CMS/admin panel di tahap berikutnya).
 
 ---
@@ -102,10 +102,12 @@ tanpa perlu mengubah struktur HTML/CSS yang sudah dibuat.
 ## 📋 To-do berikutnya
 
 - [ ] Bangun halaman admin (CMS) untuk kelola Blog & Proyek
+- [ ] Ai generator blog (Flownya, tentukan topic lalu generate sebanyak 5 judul, pilih judul lalu generatif isi/konten, saat generate isi/konten generate juga untuk meta title, meta description)
+- [ ] gunakan api key model ai free tier seperti gemini untuk generate isi/konten, groq untuk generate judul dan generate meta title, description)
 - [ ] Sambungkan section "Proyek & Unduhan" ke data asli (ganti dummy)
 - [ ] Sambungkan form kontak ke email/notifikasi WhatsApp
 - [ ] Ganti visitor counter ke sistem sendiri (opsional, saat backend siap)
-- [ ] SEO lanjutan (structured data, sitemap, OpenGraph image)
+- [ ] SEO lanjutan (structured data, sitemap, OpenGraph image, HTML Simantic)
 
 ---
 
