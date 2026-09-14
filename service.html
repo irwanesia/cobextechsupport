@@ -20,6 +20,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Lora:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
 <header>
@@ -87,7 +95,97 @@
       </article>
     </div>
     <div class="section-foot">
-      <a href="contact.html" class="btn btn-primary" data-id="Diskusikan Proyek Anda" data-en="Discuss Your Project">Diskusikan Proyek Anda</a>
+      <a href="contact.html" class="btn btn-primary" data-event="contact_clicked" data-id="Diskusikan Proyek Anda" data-en="Discuss Your Project">Diskusikan Proyek Anda</a>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-label" data-id="PAKET WEBSITE" data-en="WEBSITE PACKAGES">PAKET WEBSITE</span>
+        <h2 data-id="Harga yang jelas, tanpa biaya tersembunyi" data-en="Clear pricing, no hidden costs">Harga yang jelas, tanpa biaya tersembunyi</h2>
+      </div>
+      <p class="desc" data-id="Semua paket menggunakan konsep Mulai dari dan dapat disesuaikan dengan kebutuhan bisnis Anda." data-en="All packages use a from-price approach and can be tailored to your business.">Semua paket menggunakan konsep "Mulai dari" dan dapat disesuaikan dengan kebutuhan bisnis Anda.</p>
+    </div>
+    <div class="pricing-grid">
+      <article class="price-card">
+        <h3 data-id="Starter" data-en="Starter">Starter</h3>
+        <p class="price-value"><span class="price-from" data-id="Mulai dari" data-en="From">Mulai dari</span> <strong>Rp1.500.000</strong></p>
+        <ul class="price-feats">
+          <li data-id="1 landing page" data-en="1 landing page">1 landing page</li>
+          <li data-id="Responsive / mobile friendly" data-en="Responsive / mobile friendly">Responsive / mobile friendly</li>
+          <li data-id="Branding sederhana" data-en="Simple branding">Branding sederhana</li>
+          <li data-id="Layanan, about, portfolio, contact" data-en="Services, about, portfolio, contact">Layanan, about, portfolio, contact</li>
+          <li data-id="Google Maps & WhatsApp CTA" data-en="Google Maps & WhatsApp CTA">Google Maps & WhatsApp CTA</li>
+          <li data-id="Basic SEO & deployment" data-en="Basic SEO & deployment">Basic SEO & deployment</li>
+          <li data-id="Domain & hosting tahun pertama" data-en="1st-year domain & hosting">Domain & hosting tahun pertama</li>
+          <li data-id="2 putaran revisi" data-en="2 revision rounds">2 putaran revisi</li>
+          <li data-id="Estimasi 3–7 hari kerja" data-en="Estimated 3–7 working days">Estimasi 3–7 hari kerja</li>
+        </ul>
+        <a class="btn btn-secondary price-cta" href="contact.html" data-event="pricing_card_clicked" data-id="Konsultasi" data-en="Ask Us">Konsultasi</a>
+      </article>
+      <article class="price-card featured">
+        <span class="price-badge" data-id="RECOMMENDED" data-en="RECOMMENDED">RECOMMENDED</span>
+        <h3 data-id="Business" data-en="Business">Business</h3>
+        <p class="price-value"><span class="price-from" data-id="Mulai dari" data-en="From">Mulai dari</span> <strong>Rp3.500.000</strong></p>
+        <ul class="price-feats">
+          <li data-id="5–8 halaman / company profile" data-en="5–8 pages / company profile">5–8 halaman / company profile</li>
+          <li data-id="Custom UI & responsive" data-en="Custom UI & responsive">Custom UI & responsive</li>
+          <li data-id="Home, about, services, portfolio, contact" data-en="Home, about, services, portfolio, contact">Home, about, services, portfolio, contact</li>
+          <li data-id="Google Maps, WhatsApp & contact form" data-en="Google Maps, WhatsApp & contact form">Google Maps, WhatsApp & contact form</li>
+          <li data-id="Basic SEO & deployment" data-en="Basic SEO & deployment">Basic SEO & deployment</li>
+          <li data-id="Domain & hosting tahun pertama" data-en="1st-year domain & hosting">Domain & hosting tahun pertama</li>
+          <li data-id="3 putaran revisi" data-en="3 revision rounds">3 putaran revisi</li>
+          <li data-id="Estimasi 1–3 minggu" data-en="Estimated 1–3 weeks">Estimasi 1–3 minggu</li>
+        </ul>
+        <a class="btn btn-primary price-cta" href="contact.html" data-event="pricing_card_clicked" data-id="Konsultasi" data-en="Ask Us">Konsultasi</a>
+      </article>
+      <article class="price-card">
+        <h3 data-id="Custom" data-en="Custom">Custom</h3>
+        <p class="price-value"><span class="price-from" data-id="Mulai dari" data-en="From">Mulai dari</span> <strong>Rp12.000.000</strong></p>
+        <ul class="price-feats">
+          <li data-id="Web application & dashboard" data-en="Web application & dashboard">Web application & dashboard</li>
+          <li data-id="Booking, membership, ecommerce kompleks" data-en="Booking, membership, complex ecommerce">Booking, membership, ecommerce kompleks</li>
+          <li data-id="Integrasi API & automation" data-en="API integration & automation">Integrasi API & automation</li>
+          <li data-id="Database, authentication, deployment" data-en="Database, authentication, deployment">Database, authentication, deployment</li>
+          <li data-id="Sistem internal & kebutuhan khusus" data-en="Internal systems & custom needs">Sistem internal & kebutuhan khusus</li>
+          <li data-id="Domain & hosting sesuai scope" data-en="Domain & hosting per scope">Domain & hosting sesuai scope</li>
+          <li data-id="Estimasi sesuai kompleksitas" data-en="Estimated by complexity">Estimasi sesuai kompleksitas</li>
+        </ul>
+        <a class="btn btn-secondary price-cta" href="contact.html" data-event="pricing_card_clicked" data-id="Diskusikan" data-en="Discuss">Diskusikan</a>
+      </article>
+    </div>
+    <p class="pricing-note" data-id="Domain dan hosting tahun pertama termasuk sesuai detail paket. Perpanjangan berikutnya mengikuti layanan yang dipilih. Maintenance tersedia sebagai layanan terpisah." data-en="First-year domain and hosting are included per package details. Renewal follows the service chosen. Maintenance is available as a separate service.">Domain dan hosting tahun pertama termasuk sesuai detail paket. Perpanjangan berikutnya mengikuti layanan yang dipilih. Maintenance tersedia sebagai layanan terpisah.</p>
+  </div>
+</section>
+
+<section class="faq-section" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="section-label" data-id="FAQ" data-en="FAQ">FAQ</span>
+        <h2 data-id="Pertanyaan Umum" data-en="Common Questions">Pertanyaan Umum</h2>
+      </div>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary data-id="Apakah harga sudah termasuk domain dan hosting?" data-en="Are domain and hosting included in the price?">Apakah harga sudah termasuk domain dan hosting?</summary>
+        <p data-id="Ya. Untuk paket Starter dan Business, domain dan hosting tahun pertama sudah termasuk. Renewal tahun berikutnya adalah biaya terpisah sesuai layanan yang dipilih." data-en="Yes. For Starter and Business, the first-year domain and hosting are included. Renewal is billed separately based on the service chosen.">Ya. Untuk paket Starter dan Business, domain dan hosting tahun pertama sudah termasuk. Renewal tahun berikutnya adalah biaya terpisah sesuai layanan yang dipilih.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-id="Apakah bisa request desain sendiri?" data-en="Can I request my own design?">Apakah bisa request desain sendiri?</summary>
+        <p data-id="Bisa. Referensi desain dapat digunakan sebagai acuan dan disesuaikan dengan kebutuhan bisnis." data-en="Yes. Design references can be used as a guide and adjusted to your business needs.">Bisa. Referensi desain dapat digunakan sebagai acuan dan disesuaikan dengan kebutuhan bisnis.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-id="Apakah bisa menambah fitur?" data-en="Can I add more features?">Apakah bisa menambah fitur?</summary>
+        <p data-id="Bisa. Fitur tambahan dihitung berdasarkan kebutuhan dan kompleksitas." data-en="Yes. Additional features are quoted based on needs and complexity.">Bisa. Fitur tambahan dihitung berdasarkan kebutuhan dan kompleksitas.</p>
+      </details>
+      <details class="faq-item">
+        <summary data-id="Apakah harga bisa disesuaikan?" data-en="Can the price be adjusted?">Apakah harga bisa disesuaikan?</summary>
+        <p data-id="Bisa melalui penyesuaian scope. Jika budget terbatas, fitur dapat disederhanakan atau dimulai dari paket yang lebih sesuai." data-en="Yes, through scope adjustment. If your budget is limited, features can be simplified or you can start from a more suitable package.">Bisa melalui penyesuaian scope. Jika budget terbatas, fitur dapat disederhanakan atau dimulai dari paket yang lebih sesuai.</p>
+      </details>
     </div>
   </div>
 </section>

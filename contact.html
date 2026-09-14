@@ -20,6 +20,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Lora:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
 <header>
@@ -77,12 +85,12 @@
         <label for="contact-message" data-id="PESAN" data-en="MESSAGE">PESAN</label>
         <textarea id="contact-message" name="message" data-id-ph="Ceritakan proyek Anda..." placeholder="" required></textarea>
       </div>
-      <button type="submit" class="btn btn-primary form-submit" data-id="Kirim Pesan" data-en="Send Message">Kirim Pesan</button>
+      <button type="submit" class="btn btn-primary form-submit" data-event="contact_clicked" data-id="Kirim Pesan" data-en="Send Message">Kirim Pesan</button>
     </form>
     <address class="contact-info-row">
       <div>
         <span class="label" data-id="EMAIL" data-en="EMAIL">EMAIL</span>
-        <a href="mailto:halo@cobextech.id" class="contact-email">halo@cobextech.id</a>
+        <a href="mailto:halo@cobextech.id" class="contact-email" data-event="email_clicked">halo@cobextech.id</a>
       </div>
       <div>
         <span class="label" data-id="JANGKAUAN" data-en="COVERAGE">JANGKAUAN</span>

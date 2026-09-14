@@ -61,6 +61,19 @@
     });
   }
 
+  /* Analytics: event delegation for [data-event] */
+  document.addEventListener('click', function(ev){
+    const el = ev.target.closest('[data-event]');
+    if(!el) return;
+    const name = el.getAttribute('data-event');
+    const page = location.pathname;
+    if(window.gtag){
+      gtag('event', name, { event_category: 'cta', page_path: page });
+    } else if(window.dataLayer){
+      dataLayer.push({ event: name, category: 'cta', page_path: page });
+    }
+  });
+
   applyTheme();
   applyLang();
 })();

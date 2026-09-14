@@ -20,6 +20,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Lora:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
 <header>
@@ -66,7 +74,7 @@
       CobexTech membantu bisnis, UMKM, sekolah, organisasi, dan instansi mengembangkan website, aplikasi web, serta solusi digital — melayani seluruh Indonesia, secara online maupun tatap muka.
     </p>
     <div class="cta-row">
-      <a href="contact.html" class="btn btn-primary" data-id="Mulai Proyek" data-en="Start a Project">Mulai Proyek</a>
+      <a href="contact.html" class="btn btn-primary" data-event="contact_clicked" data-id="Mulai Proyek" data-en="Start a Project">Mulai Proyek</a>
       <a href="portfolio.html" class="btn btn-secondary" data-id="Lihat Portfolio" data-en="View Portfolio">Lihat Portfolio</a>
     </div>
   </div>
@@ -143,7 +151,7 @@
 <section id="cta" style="border-bottom:none;">
   <div class="wrap contact-inner">
     <h2 data-id="Punya proyek digital yang ingin dikerjakan?" data-en="Have a digital project in mind?">Punya proyek digital yang ingin dikerjakan?</h2>
-    <a href="contact.html" class="btn btn-primary" data-id="Hubungi Kami" data-en="Contact Us">Hubungi Kami</a>
+    <a href="contact.html" class="btn btn-primary" data-event="contact_clicked" data-id="Hubungi Kami" data-en="Contact Us">Hubungi Kami</a>
   </div>
 </section>
 </main>

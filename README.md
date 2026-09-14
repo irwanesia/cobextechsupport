@@ -10,8 +10,13 @@ Portfolio website untuk **CobexTech**, digital studio yang membantu bisnis, UMKM
 | --- | --- |
 | `index.html` | Landing page / beranda |
 | `about.html` | Tentang studio & cara kerja |
-| `service.html` | Layanan yang ditawarkan |
-| `portfolio.html` | Kumpulan proyek |
+| `service.html` | Layanan + **Pricing** (Starter/Business/Custom) & FAQ |
+| `portfolio.html` | Kumpulan proyek + section **Demo Website** |
+| `demo/bengkel.html` | Contoh website bengkel (`/demo/bengkel`) |
+| `demo/lpk.html` | Contoh website LPK/kursus (`/demo/lpk`) |
+| `demo/kontraktor.html` | Contoh website kontraktor (`/demo/kontraktor`) |
+| `demo/klinik.html` | Contoh website klinik (`/demo/klinik`) |
+| `demo/distributor.html` | Contoh website distributor (`/demo/distributor`) |
 | `blog.html` & `blog-1..5.html` | Artikel & berita |
 | `shop.html` | Produk software & digital |
 | `contact.html` | Kontak & formulir proyek |
@@ -22,6 +27,7 @@ Portfolio website untuk **CobexTech**, digital studio yang membantu bisnis, UMKM
 - JavaScript vanilla (`assets/main.js`, `assets/shop.js`, `assets/contact.js`)
 - Google Fonts (Montserrat, Lora, JetBrains Mono)
 - Google Apps Script + Google Sheets (backend formulir kontak)
+- Google Analytics 4 (event tracking pricing, demo, WhatsApp, email, contact)
 
 ## Fitur
 
@@ -29,17 +35,22 @@ Portfolio website untuk **CobexTech**, digital studio yang membantu bisnis, UMKM
 - **Bilingual**: Indonesia/Inggris, tersimpan di `localStorage`.
 - **Tema gelap/terang**: toggle tema dengan persistensi.
 - **Formulir kontak**: kirim pesan ke Google Sheets via Apps Script web app, dengan notifikasi toast sukses/gagal.
+- **Pricing**: paket Starter/Business/Custom dengan "Mulai dari" dan FAQ di `/service`.
+- **Demo Website**: 5 "Contoh Website" hidup di `/demo/*` (bengkel, lpk, kontraktor, klinik, distributor) untuk mendukung sales/prospecting.
+- **Analytics**: GA4 mengirim event kategori (pricing, demo, WhatsApp, email, contact) via `dataLayer`.
 
 ## Struktur
 
 ```
 ├── assets/
 │   ├── style.css    # Global stylesheet
-│   ├── main.js      # Script utama (tema, bahasa, navigasi)
+│   ├── demo.css     # Gaya bersama halaman demo
+│   ├── main.js      # Script utama (tema, bahasa, navigasi, GA4 events)
 │   ├── shop.js      # Script halaman shop (modal produk & WhatsApp)
 │   └── contact.js   # Script formulir kontak → Google Sheets
 ├── apps-script/
 │   └── Code.gs      # Backend Apps Script (doPost → appendRow ke sheet)
+├── demo/            # Halaman "Contoh Website": bengkel, lpk, kontraktor, klinik, distributor
 ├── *.html           # Halaman statis
 ```
 
