@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelola Artikel — CobexTech</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Lora:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/blog-admin.css">
+</head>
+<body>
+<header><div class="wrap admin-header"><a href="index.html" class="logo">Cobex<span>Tech</span></a><a href="blog.html" class="blog-back">&larr; Lihat blog</a></div></header>
+<main class="wrap admin-main">
+  <section class="admin-intro"><span class="eyebrow">RUANG KERJA EDITOR</span><h1>Kelola artikel</h1><p>Artikel tersimpan di Google Sheets. Kunci admin hanya digunakan selama halaman ini terbuka.</p></section>
+  <section class="admin-access" aria-labelledby="access-title">
+    <div><h2 id="access-title">Akses editor</h2><p>Masukkan kunci yang disimpan pada Script Properties Apps Script.</p></div>
+    <form id="access-form" class="access-form"><label for="admin-key">Kunci admin</label><div class="access-row"><input id="admin-key" type="password" autocomplete="current-password" required><button class="btn btn-primary" type="submit">Buka editor</button></div></form>
+  </section>
+  <p class="admin-status" id="admin-status" role="status" aria-live="polite">Editor terkunci.</p>
+  <div class="admin-workspace" id="admin-workspace" hidden>
+    <section class="admin-editor" aria-labelledby="editor-title">
+      <div class="editor-heading"><div><span class="eyebrow">EDITOR</span><h2 id="editor-title">Artikel baru</h2></div><button type="button" class="btn btn-secondary" id="new-article">Artikel baru</button></div>
+      <form id="article-form">
+        <div class="admin-fields"><div class="form-field"><label for="article-title-id">JUDUL (INDONESIA)</label><input id="article-title-id" name="titleId" maxlength="180" required></div><div class="form-field"><label for="article-title-en">JUDUL (INGGRIS)</label><input id="article-title-en" name="titleEn" maxlength="180"><small>Opsional. Jika kosong, judul Indonesia digunakan.</small></div></div>
+        <div class="admin-fields"><div class="form-field"><label for="article-slug">SLUG URL</label><input id="article-slug" name="slug" pattern="[a-z0-9]+(-[a-z0-9]+)*" required><small>Huruf kecil, angka, dan tanda hubung.</small></div><div class="form-field"><label for="article-category-id">KATEGORI (INDONESIA)</label><input id="article-category-id" name="categoryId" maxlength="50" required></div><div class="form-field"><label for="article-category-en">KATEGORI (INGGRIS)</label><input id="article-category-en" name="categoryEn" maxlength="50"></div></div>
+        <div class="admin-fields"><div class="form-field"><label for="article-excerpt-id">RINGKASAN SEO (INDONESIA)</label><textarea id="article-excerpt-id" name="excerptId" maxlength="300" rows="3" required></textarea><small>Digunakan sebagai meta description bahasa Indonesia.</small></div><div class="form-field"><label for="article-excerpt-en">RINGKASAN SEO (INGGRIS)</label><textarea id="article-excerpt-en" name="excerptEn" maxlength="300" rows="3"></textarea><small>Opsional. Jika kosong, ringkasan Indonesia digunakan.</small></div></div>
+        <div class="admin-fields"><div class="form-field"><label for="article-content-id">ISI ARTIKEL (INDONESIA)</label><textarea id="article-content-id" name="contentId" rows="14" required></textarea><small>Pisahkan paragraf dengan satu baris kosong. HTML tidak diproses.</small></div><div class="form-field"><label for="article-content-en">ISI ARTIKEL (INGGRIS)</label><textarea id="article-content-en" name="contentEn" rows="14"></textarea><small>Opsional. Jika kosong, isi Indonesia digunakan.</small></div></div>
+        <div class="admin-fields admin-publish-row"><div class="form-field"><label for="article-date">TANGGAL TERBIT</label><input id="article-date" name="publishedAt" type="date" required></div><label class="publish-toggle"><input id="article-published" name="published" type="checkbox"><span>Terbitkan artikel</span></label></div>
+        <button type="submit" class="btn btn-primary" id="save-article">Simpan artikel</button>
+      </form>
+    </section>
+    <aside class="admin-list" aria-labelledby="list-title"><div class="editor-heading"><div><span class="eyebrow">SHEET</span><h2 id="list-title">Artikel tersimpan</h2></div><button type="button" class="ctrl-btn" id="refresh-articles" aria-label="Muat ulang artikel">Muat ulang</button></div><div id="saved-articles" class="saved-articles"><p>Memuat artikel...</p></div></aside>
+  </div>
+</main>
+<script src="assets/blog-config.js"></script>
+<script src="assets/blog-admin.js"></script>
+</body>
+</html>

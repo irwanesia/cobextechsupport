@@ -1,0 +1,1 @@
+window.COBEX_BLOG_GAS_URL = 'https://script.google.com/macros/s/AKfycbxLattHayGs5JFx-diTBKDxJDi-UWOIXXWSIc-XzMth17D9dZO0V6fK7AqDhq8aTdUmYg/exec';

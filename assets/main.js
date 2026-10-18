@@ -14,6 +14,10 @@
     }
   } catch(e){}
 
+  const requestedLang = new URLSearchParams(window.location.search).get("lang");
+  if (requestedLang === "id" || requestedLang === "en")
+    currentLang = requestedLang;
+
   function savePrefs(){
     try { localStorage.setItem(STORE_KEY, JSON.stringify({ theme: currentTheme, lang: currentLang })); } catch(e){}
   }
