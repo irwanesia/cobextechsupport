@@ -68,6 +68,32 @@
     if(mBuy) mBuy.addEventListener('click', closeModal);
   }
 
+  // Donation handling for Web Yayasan card
+  const donationCards = document.querySelectorAll('.shop-card[data-donation="true"]');
+  donationCards.forEach(card => {
+    const btn = card.querySelector('.donate-btn');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const input = card.querySelector('.donation-input-field');
+      const amount = input ? parseInt(input.value) : 50000;
+      if (!amount || amount < 50000) {
+        alert(lang() === 'en' ? 'Minimum donation is Rp 50.000' : 'Minimal donasi Rp 50.000');
+        return;
+      }
+      const name = nameOf(card);
+      const msg = lang() === 'en'
+        ? 'Hello CobexTech, I would like to donate for "' + name + '" (Donation Amount: Rp ' + amount.toLocaleString('id-ID') + '). I am ready to transfer. Please share payment details.'
+        : 'Halo CobexTech, saya ingin mendonasikan untuk "' + name + '" (Jumlah Donasi: Rp ' + amount.toLocaleString('id-ID') + '). Saya sudah siap untuk transfer. Mohon info rekening tujuan.';
+      window.open(waLink(msg), '_blank', 'noopener');
+    });
+  });
+
+  // Prevent modal opening when clicking donation input
+  document.querySelectorAll('.donation-input-field').forEach(input => {
+    input.addEventListener('click', e => e.stopPropagation());
+  });
+
   document.querySelectorAll('.shop-card').forEach(card => {
     card.addEventListener('click', e => {
       if(e.target.closest('.buy-btn')) return;

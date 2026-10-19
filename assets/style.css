@@ -276,6 +276,15 @@ section{padding:44px 0; border-bottom:1px solid var(--border);}
 .buy-btn{font-family:var(--font-mono); font-size:10.5px; letter-spacing:.03em; border:1px solid var(--text); padding:6px 12px; border-radius:100px; cursor:pointer; background:none; color:var(--text);}
 .buy-btn:hover{background:var(--text); color:var(--bg);}
 
+/* --- Donation card (Web Yayasan) --- */
+.shop-card--donation{border:2px solid #F5A623; position:relative;}
+.shop-card--donation::before{content:'DONASI'; position:absolute; top:12px; right:12px; background:#F5A623; color:#000; font-size:10px; font-weight:700; padding:3px 8px; border-radius:2px; z-index:1; font-family:var(--font-mono); letter-spacing:.05em;}
+.donation-amount{margin:12px 0;}
+.donation-amount label{display:block; font-size:12px; font-weight:600; margin-bottom:6px; color:var(--text-muted);}
+.donation-input-field{width:100%; padding:8px 12px; border:1px solid var(--border); border-radius:2px; font-size:13px; background:var(--bg); color:var(--text); font-family:var(--font-mono);}
+.donate-btn{background:#F5A623 !important; color:#000 !important; border-color:#F5A623 !important;}
+.donate-btn:hover{background:#d48c0f !important; color:#000 !important;}
+
 /* ---------- PRODUCT MODAL ---------- */
 .modal{position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center; padding:20px;}
 .modal.open{display:flex;}
