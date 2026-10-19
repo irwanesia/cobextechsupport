@@ -34,7 +34,30 @@
   function openModal(card){
     if(!modal) return;
     const l = lang();
-    mThumb.textContent = card.querySelector('.shop-thumb').getAttribute('data-' + l);
+    const cardThumb = card.querySelector('.shop-thumb');
+    mThumb.classList.remove('has-img');
+    mThumb.innerHTML = '';
+    const thumbSrc = cardThumb.dataset.img || (cardThumb.querySelector('img') && cardThumb.querySelector('img').getAttribute('src'));
+    const thumbImgEl = cardThumb.querySelector('img');
+    const loadedImg = thumbImgEl && thumbImgEl.naturalWidth > 0 ? thumbImgEl : null;
+    if(loadedImg){
+      const mImg = document.createElement('img');
+      mImg.className = 'modal-thumb-img';
+      mImg.src = loadedImg.src;
+      mImg.alt = loadedImg.alt || '';
+      mThumb.appendChild(mImg);
+      mThumb.classList.add('has-img');
+    } else if(thumbSrc){
+      const mImg = document.createElement('img');
+      mImg.className = 'modal-thumb-img';
+      mImg.alt = cardThumb.getAttribute('data-' + l) || '';
+      mImg.addEventListener('load', () => mThumb.classList.add('has-img'));
+      mImg.addEventListener('error', () => { mImg.remove(); mThumb.textContent = cardThumb.getAttribute('data-' + l); });
+      mThumb.appendChild(mImg);
+      mImg.src = thumbSrc;
+    } else {
+      mThumb.textContent = cardThumb.getAttribute('data-' + l);
+    }
     mTag.textContent = card.querySelector('.shop-tag').getAttribute('data-' + l);
     mName.textContent = nameOf(card);
     mDesc.textContent = card.querySelector('p').getAttribute('data-' + l);
@@ -67,6 +90,34 @@
     document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
     if(mBuy) mBuy.addEventListener('click', closeModal);
   }
+
+  // Thumbnail image support (optional): add data-img="path" to .shop-thumb or nest an <img>.
+  // If the image is missing/fails to load, the default text thumbnail remains.
+  document.querySelectorAll('.shop-thumb').forEach(thumb => {
+    const dataSrc = thumb.dataset.img;
+    if(dataSrc){
+      const img = document.createElement('img');
+      img.className = 'shop-thumb-img';
+      img.alt = thumb.getAttribute('data-' + (document.documentElement.getAttribute('lang') || 'id')) || '';
+      img.loading = 'lazy';
+      const onLoad = () => thumb.classList.add('has-img');
+      const onErr = () => { img.remove(); thumb.classList.remove('has-img'); };
+      img.addEventListener('load', onLoad, {once:true});
+      img.addEventListener('error', onErr, {once:true});
+      thumb.appendChild(img);
+      img.src = dataSrc;
+    }
+    thumb.querySelectorAll('img').forEach(img => {
+      const onLoad = () => thumb.classList.add('has-img');
+      const onErr = () => { img.remove(); thumb.classList.remove('has-img'); };
+      if(img.complete){
+        if(img.naturalWidth > 0) onLoad(); else onErr();
+      } else {
+        img.addEventListener('load', onLoad, {once:true});
+        img.addEventListener('error', onErr, {once:true});
+      }
+    });
+  });
 
   // Donation handling for Web Yayasan card
   const donationCards = document.querySelectorAll('.shop-card[data-donation="true"]');
