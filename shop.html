@@ -81,8 +81,11 @@
     </div>
     <div class="shop-grid">
       <article class="shop-card shop-card--donation" data-tag-id="Yayasan" data-tag-en="Foundation" data-donation="true" data-feat-id="2 sisi: Publik + Admin CMS|4 role dengan hak akses|21 modul admin CRUD|Sistem donasi + verifikasi|Kalender kegiatan|Navigasi dinamis dari DB|Upload file (gambar, dokumen, bukti)|Docker-ready monorepo" data-feat-en="2 sides: Public + Admin CMS|4 roles with access control|21 admin CRUD modules|Donation system + verification|Activity calendar|Dynamic DB navigation|File upload (image, doc, proof)|Docker-ready monorepo">
-        <!-- Thumbnail gambar opsional: tambahkan data-img="assets/img/nama-file.jpg" pada .shop-thumb (atau nest <img class="shop-thumb-img">). Jika gambar tidak ada/gagal dimuat, thumbnail teks default tetap tampil. -->
-        <img class="shop-thumb-img" data-src="assets/img/web_yayasan.png" alt="Website Yayasan" loading="lazy">
+        <!-- Thumbnail gambar opsional: tambahkan data-img="assets/img/nama-file.jpg" pada .shop-thumb, atau nest <img class="shop-thumb-img" src="..."> (data-src juga didukung). Teks thumbnail harus berada di <span class="shop-thumb-text" data-id="..." data-en="..."> agar tidak terhapus i18n. Jika gambar tidak ada/gagal dimuat, thumbnail teks default tetap tampil. -->
+        <div class="shop-thumb">
+          <img class="shop-thumb-img" data-src="assets/img/web_yayasan.png" alt="Website Yayasan" loading="lazy">
+          <span class="shop-thumb-text" data-id="Website Yayasan" data-en="Nurul Jannah Foundation Web">Website Yayasan</span>
+        </div>
         <span class="shop-tag" data-id="Yayasan" data-en="Foundation">Yayasan</span>
         <h4 data-id="Website Yayasan" data-en="Nurul Jannah Foundation Web">Website Yayasan</h4>
         <p data-id="Sistem Informasi Manajemen Kegiatan Yayasan berbasis CodeIgniter 4. Donasi minimal Rp 50.000." data-en="Foundation Activity Management System based on CodeIgniter 4. Minimum donation Rp 50.000.">Sistem Informasi Manajemen Kegiatan Yayasan berbasis CodeIgniter 4. Donasi minimal Rp 50.000.</p>
@@ -96,7 +99,7 @@
         </div>
       </article>
       <article class="shop-card" data-tag-id="Sistem Kasir" data-tag-en="Cashier System" data-feat-id="Pencatatan penjualan & retur|Cetak struk A4/thermal|Laporan penjualan harian|Manajemen stok sederhana" data-feat-en="Sales & return logging|A4/thermal receipt printing|Daily sales reports|Simple stock management">
-        <div class="shop-thumb" data-id="POS Kasir Pro" data-en="POS Cashier Pro">POS Kasir Pro</div>
+        <div class="shop-thumb"><span class="shop-thumb-text" data-id="POS Kasir Pro" data-en="POS Cashier Pro">POS Kasir Pro</span></div>
         <span class="shop-tag" data-id="Sistem Kasir" data-en="Cashier System">Sistem Kasir</span>
         <h4 data-id="POS Kasir Pro" data-en="POS Cashier Pro">POS Kasir Pro</h4>
         <p data-id="Sistem kasir lengkap untuk toko, warung, dan UMKM dengan laporan harian." data-en="Complete cashier system for shops, stalls, and SMEs with daily reports.">Sistem kasir lengkap untuk toko, warung, dan UMKM dengan laporan harian.</p>
@@ -106,7 +109,7 @@
         </div>
       </article>
       <article class="shop-card" data-tag-id="Inventory" data-tag-en="Inventory" data-feat-id="Multi-gudang|Mutasi & transfer stok|Notifikasi stok menipis|Laporan nilai persediaan" data-feat-en="Multi-warehouse|Stock transfer & mutation|Low-stock alerts|Inventory value reports">
-        <div class="shop-thumb" data-id="Sistem Manajemen Inventori" data-en="Inventory Management System">Sistem Manajemen Inventori</div>
+        <div class="shop-thumb"><span class="shop-thumb-text" data-id="Sistem Manajemen Inventori" data-en="Inventory Management System">Sistem Manajemen Inventori</span></div>
         <span class="shop-tag" data-id="Inventory" data-en="Inventory">Inventory</span>
         <h4 data-id="Sistem Manajemen Inventori" data-en="Inventory Management System">Sistem Manajemen Inventori</h4>
         <p data-id="Kelola stok multi-gudang, mutasi barang, dan peringatan stok menipis." data-en="Manage multi-warehouse stock, item transfers, and low-stock alerts.">Kelola stok multi-gudang, mutasi barang, dan peringatan stok menipis.</p>
@@ -116,7 +119,7 @@
         </div>
       </article>
       <article class="shop-card" data-tag-id="Booking" data-tag-en="Booking" data-feat-id="Kalender jadwal|Notifikasi otomatis|Manajemen pelanggan|Integrasi WhatsApp" data-feat-en="Schedule calendar|Automatic notifications|Customer management|WhatsApp integration">
-        <div class="shop-thumb" data-id="Aplikasi Booking Online" data-en="Online Booking App">Aplikasi Booking Online</div>
+        <div class="shop-thumb"><span class="shop-thumb-text" data-id="Aplikasi Booking Online" data-en="Online Booking App">Aplikasi Booking Online</span></div>
         <span class="shop-tag" data-id="Booking" data-en="Booking">Booking</span>
         <h4 data-id="Aplikasi Booking Online" data-en="Online Booking App">Aplikasi Booking Online</h4>
         <p data-id="Reservasi jadwal untuk klinik, jasa, dan rental secara mandiri." data-en="Self-service schedule reservations for clinics, services, and rentals.">Reservasi jadwal untuk klinik, jasa, dan rental secara mandiri.</p>
@@ -126,7 +129,7 @@
         </div>
       </article>
       <article class="shop-card" data-tag-id="Pendidikan" data-tag-en="Education" data-feat-id="Input nilai & rapor|Presensi siswa|Jadwal pelajaran|Portal orang tua" data-feat-en="Grades & report cards|Student attendance|Class schedules|Parent portal">
-        <div class="shop-thumb" data-id="Sistem Akademik Sekolah" data-en="School Academic System">Sistem Akademik Sekolah</div>
+        <div class="shop-thumb"><span class="shop-thumb-text" data-id="Sistem Akademik Sekolah" data-en="School Academic System">Sistem Akademik Sekolah</span></div>
         <span class="shop-tag" data-id="Pendidikan" data-en="Education">Pendidikan</span>
         <h4 data-id="Sistem Akademik Sekolah" data-en="School Academic System">Sistem Akademik Sekolah</h4>
         <p data-id="Nilai, presensi, dan jadwal untuk guru, siswa, dan orang tua." data-en="Grades, attendance, and schedules for teachers, students, and parents.">Nilai, presensi, dan jadwal untuk guru, siswa, dan orang tua.</p>
@@ -136,7 +139,7 @@
         </div>
       </article>
       <article class="shop-card" data-tag-id="WebGIS" data-tag-en="WebGIS" data-feat-id="Peta interaktif|Input data spasial|Filter & pencarian lokasi|Export data" data-feat-en="Interactive map|Spatial data input|Location filter & search|Data export">
-        <div class="shop-thumb" data-id="Sistem WebGIS" data-en="WebGIS System">Sistem WebGIS</div>
+        <div class="shop-thumb"><span class="shop-thumb-text" data-id="Sistem WebGIS" data-en="WebGIS System">Sistem WebGIS</span></div>
         <span class="shop-tag" data-id="WebGIS" data-en="WebGIS">WebGIS</span>
         <h4 data-id="Sistem WebGIS" data-en="WebGIS System">Sistem WebGIS</h4>
         <p data-id="Peta interaktif berbasis lokasi untuk instansi, riset, dan usaha." data-en="Location-based interactive map for institutions, research, and business.">Peta interaktif berbasis lokasi untuk instansi, riset, dan usaha.</p>
@@ -146,7 +149,7 @@
         </div>
       </article>
       <article class="shop-card" data-tag-id="AI" data-tag-en="AI" data-feat-id="Analisis sentimen|Dashboard opini|Laporan otomatis|Integrasi media sosial" data-feat-en="Sentiment analysis|Opinion dashboard|Automatic reports|Social media integration">
-        <div class="shop-thumb" data-id="Chatbot AI Sentiment" data-en="AI Sentiment Chatbot">Chatbot AI Sentiment</div>
+        <div class="shop-thumb"><span class="shop-thumb-text" data-id="Chatbot AI Sentiment" data-en="AI Sentiment Chatbot">Chatbot AI Sentiment</span></div>
         <span class="shop-tag" data-id="AI" data-en="AI">AI</span>
         <h4 data-id="Chatbot AI Sentiment" data-en="AI Sentiment Chatbot">Chatbot AI Sentiment</h4>
         <p data-id="Analisis opini publik dan chatbot otomatis berbasis AI." data-en="Public opinion analysis and an AI-powered automated chatbot.">Analisis opini publik dan chatbot otomatis berbasis AI.</p>
@@ -179,7 +182,7 @@
     </div>
     <div class="shop-grid">
       <article class="shop-card" data-tag-id="Website" data-tag-en="Website" data-feat-id="Desain responsif|Manajemen konten|SEO dasar|Kecepatan tinggi" data-feat-en="Responsive design|Content management|Basic SEO|High performance">
-        <div class="shop-thumb" data-id="Website Company Profile" data-en="Company Profile Website">Website Company Profile</div>
+        <div class="shop-thumb"><span class="shop-thumb-text" data-id="Website Company Profile" data-en="Company Profile Website">Website Company Profile</span></div>
         <span class="shop-tag" data-id="Website" data-en="Website">Website</span>
         <h4 data-id="Website Company Profile" data-en="Company Profile Website">Website Company Profile</h4>
         <p data-id="Profil perusahaan modern, cepat, dan mudah dikelola sendiri." data-en="Modern, fast company profile that is easy to manage yourself.">Profil perusahaan modern, cepat, dan mudah dikelola sendiri.</p>
@@ -189,7 +192,7 @@
         </div>
       </article>
       <article class="shop-card" data-tag-id="Sistem Kasir" data-tag-en="Cashier System" data-feat-id="Pencatatan transaksi|Struk sederhana|Laporan harian|Ringan & cepat" data-feat-en="Transaction logging|Simple receipt|Daily reports|Lightweight & fast">
-        <div class="shop-thumb" data-id="Kasir UMKM Lite" data-en="SME Cashier Lite">Kasir UMKM Lite</div>
+        <div class="shop-thumb"><span class="shop-thumb-text" data-id="Kasir UMKM Lite" data-en="SME Cashier Lite">Kasir UMKM Lite</span></div>
         <span class="shop-tag" data-id="Sistem Kasir" data-en="Cashier System">Sistem Kasir</span>
         <h4 data-id="Kasir UMKM Lite" data-en="SME Cashier Lite">Kasir UMKM Lite</h4>
         <p data-id="Kasir ringan untuk warung, kios, dan toko kecil." data-en="Lightweight cashier for stalls, kiosks, and small shops.">Kasir ringan untuk warung, kios, dan toko kecil.</p>
@@ -199,7 +202,7 @@
         </div>
       </article>
       <article class="shop-card" data-tag-id="AI" data-tag-en="AI" data-feat-id="Rekomendasi cerdas|Filter kategori|Analitik pembelian|Integrasi toko online" data-feat-en="Smart recommendations|Category filters|Purchase analytics|Online store integration">
-        <div class="shop-thumb" data-id="Sistem Rekomendasi Produk" data-en="Product Recommendation System">Sistem Rekomendasi Produk</div>
+        <div class="shop-thumb"><span class="shop-thumb-text" data-id="Sistem Rekomendasi Produk" data-en="Product Recommendation System">Sistem Rekomendasi Produk</span></div>
         <span class="shop-tag" data-id="AI" data-en="AI">AI</span>
         <h4 data-id="Sistem Rekomendasi Produk" data-en="Product Recommendation System">Sistem Rekomendasi Produk</h4>
         <p data-id="Rekomendasi cerdas untuk meningkatkan penjualan toko online." data-en="Smart recommendations to increase online store sales.">Rekomendasi cerdas untuk meningkatkan penjualan toko online.</p>
@@ -209,7 +212,7 @@
         </div>
       </article>
       <article class="shop-card" data-tag-id="Website" data-tag-en="Website" data-feat-id="Tema siap pakai|Menu & profil|Formulir kontak|Mudah diubah" data-feat-en="Ready-made theme|Menu & profile|Contact form|Easy to customize">
-        <div class="shop-thumb" data-id="Template Website Sekolah" data-en="School Website Template">Template Website Sekolah</div>
+        <div class="shop-thumb"><span class="shop-thumb-text" data-id="Template Website Sekolah" data-en="School Website Template">Template Website Sekolah</span></div>
         <span class="shop-tag" data-id="Website" data-en="Website">Website</span>
         <h4 data-id="Template Website Sekolah" data-en="School Website Template">Template Website Sekolah</h4>
         <p data-id="Template siap pakai untuk profil sekolah dan madrasah." data-en="Ready-made template for school and madrasah profiles.">Template siap pakai untuk profil sekolah dan madrasah.</p>

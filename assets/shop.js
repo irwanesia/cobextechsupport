@@ -25,6 +25,7 @@
   }
   function priceOf(card){ return card.querySelector('.price').textContent.trim(); }
   function nameOf(card){ return card.querySelector('h4').getAttribute('data-' + lang()); }
+  function thumbTextOf(thumb){ const el = thumb.querySelector('.shop-thumb-text'); return el ? el.getAttribute('data-' + lang()) : (thumb.getAttribute('data-' + lang()) || ''); }
   function orderFrom(card){
     const name = nameOf(card);
     const price = priceOf(card);
@@ -37,9 +38,9 @@
     const cardThumb = card.querySelector('.shop-thumb');
     mThumb.classList.remove('has-img');
     mThumb.innerHTML = '';
-    const thumbSrc = cardThumb.dataset.img || (cardThumb.querySelector('img') && cardThumb.querySelector('img').getAttribute('src'));
-    const thumbImgEl = cardThumb.querySelector('img');
-    const loadedImg = thumbImgEl && thumbImgEl.naturalWidth > 0 ? thumbImgEl : null;
+    const thumbImg = cardThumb.querySelector('img');
+    const thumbSrc = (cardThumb.dataset && cardThumb.dataset.img) || (thumbImg && (thumbImg.getAttribute('src') || thumbImg.dataset.src));
+    const loadedImg = thumbImg && thumbImg.naturalWidth > 0 ? thumbImg : null;
     if(loadedImg){
       const mImg = document.createElement('img');
       mImg.className = 'modal-thumb-img';
@@ -50,13 +51,13 @@
     } else if(thumbSrc){
       const mImg = document.createElement('img');
       mImg.className = 'modal-thumb-img';
-      mImg.alt = cardThumb.getAttribute('data-' + l) || '';
+      mImg.alt = thumbTextOf(cardThumb) || '';
       mImg.addEventListener('load', () => mThumb.classList.add('has-img'));
-      mImg.addEventListener('error', () => { mImg.remove(); mThumb.textContent = cardThumb.getAttribute('data-' + l); });
+      mImg.addEventListener('error', () => { mImg.remove(); mThumb.textContent = thumbTextOf(cardThumb); });
       mThumb.appendChild(mImg);
       mImg.src = thumbSrc;
     } else {
-      mThumb.textContent = cardThumb.getAttribute('data-' + l);
+      mThumb.textContent = thumbTextOf(cardThumb);
     }
     mTag.textContent = card.querySelector('.shop-tag').getAttribute('data-' + l);
     mName.textContent = nameOf(card);
@@ -91,14 +92,15 @@
     if(mBuy) mBuy.addEventListener('click', closeModal);
   }
 
-  // Thumbnail image support (optional): add data-img="path" to .shop-thumb or nest an <img>.
-  // If the image is missing/fails to load, the default text thumbnail remains.
+  // Thumbnail image support (optional): add data-img="path" to .shop-thumb or nest an <img>
+  // (src or data-src). If the image is missing/fails to load, the default text thumbnail remains.
+  // Note: .shop-thumb itself must NOT carry data-id/data-en (main.js i18n would wipe children).
   document.querySelectorAll('.shop-thumb').forEach(thumb => {
     const dataSrc = thumb.dataset.img;
     if(dataSrc){
       const img = document.createElement('img');
       img.className = 'shop-thumb-img';
-      img.alt = thumb.getAttribute('data-' + (document.documentElement.getAttribute('lang') || 'id')) || '';
+      img.alt = thumbTextOf(thumb) || '';
       img.loading = 'lazy';
       const onLoad = () => thumb.classList.add('has-img');
       const onErr = () => { img.remove(); thumb.classList.remove('has-img'); };
@@ -108,10 +110,21 @@
       img.src = dataSrc;
     }
     thumb.querySelectorAll('img').forEach(img => {
+      // Support lazy-load style: data-src instead of src
+      if(!img.getAttribute('src') && img.dataset.src){
+        const onLoad = () => thumb.classList.add('has-img');
+        const onErr = () => { img.remove(); thumb.classList.remove('has-img'); };
+        img.addEventListener('load', onLoad, {once:true});
+        img.addEventListener('error', onErr, {once:true});
+        img.src = img.dataset.src;
+        return;
+      }
       const onLoad = () => thumb.classList.add('has-img');
       const onErr = () => { img.remove(); thumb.classList.remove('has-img'); };
-      if(img.complete){
-        if(img.naturalWidth > 0) onLoad(); else onErr();
+      if(img.complete && img.naturalWidth > 0){
+        onLoad();
+      } else if(img.complete && img.naturalWidth === 0 && img.loading !== 'lazy'){
+        onErr();
       } else {
         img.addEventListener('load', onLoad, {once:true});
         img.addEventListener('error', onErr, {once:true});
